@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let product of products" 
+        [ngClass]="{'on-sale': product.onSale}"
+        (click)="selectProduct(product)">
+      {{ product.name }} - ${{ product.price }}
+    </li>
+  </ul>
+
+<app-product-detail *ngIf="selectedProduct" [product]="selectedProduct"></app-product-detail>
+
